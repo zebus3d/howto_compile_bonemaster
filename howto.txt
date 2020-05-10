@@ -21,6 +21,8 @@ Prompt$ cd blender
 Prompt$ git checkout master
 Prompt$ make update
 Prompt$ git checkout boneMaster_2X
+# With the following command we ignore possible local changes and 
+# download everything new from the remote repository:
 Prompt$ git reset --hard
 ############################################
 
@@ -39,7 +41,7 @@ Prompt$ git branch
 Prompt$ git checkout boneMaster_2X
 
 # With the following command we ignore possible local changes and 
-# download everything new from the remote repository. 
+# download everything new from the remote repository: 
 Prompt$ git reset --hard
 
 Prompt$ git pull boneMaster boneMaster_2X
