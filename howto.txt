@@ -19,7 +19,7 @@ Prompt$ cd blender
 Prompt$ git checkout master
 Prompt$ make update
 Prompt$ git checkout boneMaster_2X
-Prompt$ git reset --hard boneMaster boneMaster_2X
+Prompt$ git reset --hard
 ############################################
 
 Prompt$ git remote add boneMaster https://github.com/juangea/boneMaster
