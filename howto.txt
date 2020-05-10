@@ -1,0 +1,48 @@
+# Compile BoneMaster
+
+# boneMaster_2X = boneMaster_283 | boneMaster_290
+
+$ cd $HOME
+$ mkdir bone_studio_builds
+$ cd bone_studio_builds
+
+$ git clone https://git.blender.org/blender.git
+$ cd blender 
+$ make update 
+
+############################################
+# If not the first time
+# For update:
+############################################
+$ cd blender
+$ git checkout master
+$ make update
+$ git checkout boneMaster_2X
+$ git reset --hard boneMaster boneMaster_2X
+############################################
+
+$ git remote add boneMaster https://github.com/juangea/boneMaster
+
+# view all remote branches:
+$ git branch -a
+
+$ git checkout -b boneMaster_2X
+# we check that we're on the right branch:
+$ git branch
+
+$ git checkout boneMaster_2X
+$ git reset --hard
+$ git pull boneMaster boneMaster_2X
+$ git fetch 
+$ git status
+$ mkdir ../boneMaster_2X
+
+$ cmake-gui
+
+$ cd ../bonemaster_2X
+# I have 4 cores 8 threads, therefore:
+make -j8
+make install
+
+In Mac you can run your new build:
+$HOME/bone_studio_builds/bonemaster_2X/bin/Blender.app/Contents/MacOS/Blender
