@@ -1,5 +1,6 @@
 # Compile BoneMaster
 
+# Where boneMaster_2X would be boneMaster_283 or boneMaster_290 ( for blender 2.83 or blender 2.90, etc...)
 # boneMaster_2X = boneMaster_283 | boneMaster_290
 
 $ cd $HOME
