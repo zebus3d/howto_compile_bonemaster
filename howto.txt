@@ -3,47 +3,58 @@
 # Where boneMaster_2X would be boneMaster_283 or boneMaster_290 ( for blender 2.83 or blender 2.90, etc...)
 # boneMaster_2X = boneMaster_283 | boneMaster_290
 
-$ cd $HOME
-$ mkdir bone_studio_builds
-$ cd bone_studio_builds
+Prompt$ cd $HOME
+Prompt$ mkdir bone_studio_builds
+Prompt$ cd bone_studio_builds
 
-$ git clone https://git.blender.org/blender.git
-$ cd blender 
-$ make update 
+Prompt$ git clone https://git.blender.org/blender.git
+Prompt$ cd blender 
+Prompt$ make update 
 
 ############################################
 # If not the first time
 # For update:
 ############################################
-$ cd blender
-$ git checkout master
-$ make update
-$ git checkout boneMaster_2X
-$ git reset --hard boneMaster boneMaster_2X
+Prompt$ cd blender
+Prompt$ git checkout master
+Prompt$ make update
+Prompt$ git checkout boneMaster_2X
+Prompt$ git reset --hard boneMaster boneMaster_2X
 ############################################
 
-$ git remote add boneMaster https://github.com/juangea/boneMaster
+Prompt$ git remote add boneMaster https://github.com/juangea/boneMaster
 
-# view all remote branches:
-$ git branch -a
+# View all remote branches:
+Prompt$ git branch -a
 
-$ git checkout -b boneMaster_2X
+# Create local branch:
+Prompt$ git checkout -b boneMaster_2X
+
 # we check that we're on the right branch:
-$ git branch
+Prompt$ git branch
 
-$ git checkout boneMaster_2X
-$ git reset --hard
-$ git pull boneMaster boneMaster_2X
-$ git fetch 
-$ git status
-$ mkdir ../boneMaster_2X
+# Change to specific branch
+Prompt$ git checkout boneMaster_2X
 
-$ cmake-gui
+# With the following command we ignore possible local changes and 
+# download everything new from the remote repository. 
+Prompt$ git reset --hard
 
-$ cd ../bonemaster_2X
+Prompt$ git pull boneMaster boneMaster_2X
+
+# I check that there are no changes or differences between the remote server and the local repository:
+Prompt$ git fetch 
+Prompt$ git status
+Prompt$ mkdir ../boneMaster_2X
+
+# In this step we will indicate with the guide which parts of blender should be included or excluded in our build:
+Prompt$ cmake-gui
+
+Prompt$ cd ../bonemaster_2X
+
 # I have 4 cores 8 threads, therefore:
-make -j8
-make install
+Prompt$ make -j8
+Prompt$ make install
 
 In Mac you can run your new build:
-$HOME/bone_studio_builds/bonemaster_2X/bin/Blender.app/Contents/MacOS/Blender
+Prompt$ $HOME/bone_studio_builds/bonemaster_2X/bin/Blender.app/Contents/MacOS/Blender
